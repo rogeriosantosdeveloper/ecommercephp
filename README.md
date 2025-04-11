@@ -1,66 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 E-Commerce com Painel Administrativo em Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este projeto é uma aplicação web desenvolvida com Laravel que simula um sistema de e-commerce com funcionalidades completas de vitrine de produtos, carrinho de compras, controle de estoque, vendas e painel administrativo para funcionários.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Funcionalidades
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 👤 Autenticação e Controle de Acesso
+- Registro e login de **clientes**
+- Login de **funcionários** com acesso ao painel administrativo
+- Controle de permissões com middleware (`is_admin`)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🛍️ Vitrine de Produtos
+- Página pública com listagem de produtos (imagem, descrição e preço)
+- Filtros e busca por nome ou categoria
 
-## Learning Laravel
+### 👥 Gestão de Usuários (CRUD)
+- Cadastro, edição, visualização e exclusão de **clientes**
+- Cadastro, edição, visualização e exclusão de **funcionários**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 📦 Gestão de Produtos (CRUD)
+- Cadastro de novos produtos com imagem, preço e descrição
+- Edição, visualização e exclusão de produtos
+- Controle de estoque automático
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 🛒 Carrinho de Compras e Vendas
+- Adição e remoção de produtos no carrinho
+- Tela de checkout com resumo da compra
+- Registro de vendas no banco de dados
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📊 Painel Administrativo
+- Acesso restrito a funcionários
+- Visualização de estatísticas de vendas e estoque em tempo real
 
-## Laravel Sponsors
+### 📑 Geração de Relatórios
+- Relatório de **vendas por período**
+- Relatório de **estoque**
+- Relatório de **clientes cadastrados**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## ⚙️ Tecnologias Utilizadas
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **Laravel 10+**
+- **Blade** (sistema de templates)
+- **MySQL** (ou outro banco relacional)
+- **Bootstrap** ou **Tailwind CSS**
+- **Auth middleware** personalizado (`is_admin`)
+- **Eloquent ORM**
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🧑‍💻 Como Executar Localmente
 
-## Code of Conduct
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/rogeriosantosdeveloper/ecommercephp.git
+   cd ecommercephp
+Instale as dependências:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+bash
+Copiar
+Editar
+composer install
+npm install && npm run dev
+Configure o .env:
 
-## Security Vulnerabilities
+Copie o .env.example para .env
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Configure suas credenciais do banco de dados
 
-## License
+Gere a chave da aplicação:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+bash
+Copiar
+Editar
+php artisan key:generate
+Execute as migrations e, se necessário, seeds:
+
+bash
+Copiar
+Editar
+php artisan migrate --seed
+Inicie o servidor:
+
+bash
+Copiar
+Editar
+php artisan serve
+🧪 Acesso de Teste
+Você pode utilizar as seguintes credenciais para testes:
+
+Cliente
+Email: rogerio2@rogerio2.com
+
+Senha: 12345678
+
+Funcionário (Admin)
+Email: admin@example.com
+
+Senha: 12345678
+
+📌 Melhorias Futuras
+Integração com gateways de pagamento
+
+Confirmação de pedido por e-mail
+
+Responsividade aprimorada
+
+Implementação de testes automatizados
+
+📄 Licença
+Este projeto está sob a licença MIT.
+
+🤝 Contribuindo
+Pull requests são bem-vindos! Para grandes mudanças, abra uma issue antes para discutir o que você gostaria de modificar.
+
